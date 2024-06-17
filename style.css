@@ -1,0 +1,95 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(transparent, mediumspringgreen);
+}
+
+.center {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+
+  .front {
+    transform: rotate(-90deg);
+    width: 270px;
+    height: 180px;
+    transition: .5s;
+    position: relative;
+    box-shadow: 0 5px 5px #2224;
+
+    * {
+      pointer-events: none;
+    }
+
+    .image3 {
+      display: block;
+      width: 67%;
+      height: 150.5%;
+      transform-origin: 50% 30%;
+      transform: rotate(90deg);
+      position: absolute;
+      top: 9px;
+      left: 99px;
+    }
+
+    .portada {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: red;
+      transform: rotateX(0deg);
+      transform-origin: top;
+      transition: 1s;
+      transform-style: preserve-3d;
+
+
+
+      .image1 {
+        display: block;
+        width: 67%;
+        height: 150.5%;
+        transform-origin: 50% 30%;
+        transform: rotate(90deg);
+        position: absolute;
+        top: 9px;
+        left: 99px;
+
+      }
+
+      .image2 {
+        display: block;
+        width: 67%;
+        height: 150.5%;
+        transform-origin: 50% 30%;
+        transform: rotate(90deg) rotateY(-180deg);
+        backface-visibility: hidden;
+        position: absolute;
+        top: 9px;
+        left: 99px;
+      }
+
+
+    }
+
+  }
+
+
+  .front.activo {
+
+    .portada {
+      transform: rotateX(180deg);
+    }
+  }
+}
